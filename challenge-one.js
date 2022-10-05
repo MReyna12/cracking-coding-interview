@@ -23,4 +23,21 @@ function uniqueCharacters(str) {
   return true;
 }
 
-// Without using additional data structure
+// Without using additional data structures
+function uniqueCharacters2(str) {
+  if (str.length < 2) return true;
+
+  const stringCopy = str.slice().toLowerCase();
+
+  let comparisonString = "";
+
+  for (let i = 0; i < stringCopy.length; i++) {
+    if (comparisonString.includes(stringCopy[i])) {
+      return false;
+    } else {
+      comparisonString += stringCopy[i];
+    }
+  }
+
+  return true;
+}
